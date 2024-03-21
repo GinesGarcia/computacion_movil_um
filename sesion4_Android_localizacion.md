@@ -208,7 +208,8 @@ Para manejar ese evento, hacemos lo siguiente:
         public void onSuccess(Location location) {
             // Aqui situaremos el código que necesita hacer uso de la localizacion
             String text = location.getLatitude() + " " + location.getLongitude();
-            TextView textView = findViewById(R.id.locationTV);
+            // Seleccionamos el textView donde pondremos el string anterior
+            TextView textView = findViewById(R.id.secondActTV);
             textView.setText(text);
         }
     });
@@ -254,15 +255,17 @@ this.locationCallback = new LocationCallback() {
         // Lista de localizaciones (nos da las mejores dentro de los permisos que tengamos)
         Location location = locationResult.getLastLocation();
         String text = location.getLatitude() + " " + location.getLongitude();
-        TextView textView = findViewById(R.id.locationTV);
+        TextView textView = findViewById(R.id.secondActTV);
         textView.setText(text);
     }
 };
 ```
 
+**NOTA:** añadimos el siguiete import antes de crear la solicitud de suscripción:
+  - import com.google.android.gms.location.LocationRequest;
+    
 2. Creamos la solicitud de suscripcion al servicio de actualizacion de la localizacion añadiendo lo siguiente a la funcion **showLastLocation()**:
 ```java
-
     // Comentamos esto del apartado anterior
     /* First Part
     this.client.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
@@ -270,7 +273,7 @@ this.locationCallback = new LocationCallback() {
         public void onSuccess(Location location) {
             // Aqui situaremos el código que necesita hacer uso de la localizacion
             String text = location.getLatitude() + " " + location.getLongitude();
-            TextView textView = findViewById(R.id.locationTV);
+            TextView textView = findViewById(R.id.secondActTV);
             textView.setText(text);
         }
     });
