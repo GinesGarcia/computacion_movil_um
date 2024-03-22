@@ -1,5 +1,5 @@
 ## Autoría
-    - Jesús García Rodríguez
+    - Jesús García Rodríguez - @JesusGarciaRodriguez
     > Colaboradores
         - Ginés García Avilés
 ## Uso de localización en Android
