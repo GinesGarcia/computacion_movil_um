@@ -311,13 +311,14 @@ link para generarla: https://developers.google.com/maps/documentation/android-sd
 
 ```
 # local.properties
-MAPS_API_KEY=<key>
+# API key entre comillas
+MAPS_API_KEY="<key>"
 ```
 ```xml
 # AndroidManifest.xml
 <meta-data
     android:name="com.google.android.geo.API_KEY"
-    android:value="${MAPS_API_KEY}" />
+    android:value="${MAPS_API_KEY}"/>
 ```
 
 
