@@ -6,7 +6,7 @@
 2. Crear una segunda actividad
     > File > new > activity > empty views activity (la llamamos TelephonyActivity)
     
-    > activity_location.xml:
+    > activity_telephony.xml:
 
         - Añadimos un textView text="Telephony Activity" id=telephonyTV
         - Añadimos un boton    text="Obtener Informacion de Red" id="getNetInfoBTN
@@ -193,7 +193,7 @@ al pulsar el boton, **getCellInfo()**
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
         {
             Log.d("LocationAction", "Permisos de acceso a datos de celda del terminal concedidos");
-            showCellInfo();
+            ();
         }
         else {
             Log.e("LocationAction", "Permisos de acceso a datos de celda del terminal DENEGADOS");
@@ -207,6 +207,7 @@ al pulsar el boton, **getCellInfo()**
 3. En este punto, nuestro objeto cellInfoList contiene un lista de elementos tipo CellInfo que pueden ser de **distintas tecnologías**. Por eso, tendremos que tratar cada caso verificando el tipo de tecnología al que pertenece. Añadimos entonces lo siguiente a nuestra funcion showCellInfo():
 
 ```java
+        StringBuilder text = new StringBuilder();
         for (CellInfo info : cellInfoList)
         {
             // Celda 3G
